@@ -1,123 +1,127 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Aangifte erfbelasting</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- <link rel="icon" href="./assets/favicon.ico"> -->
-  <!-- <script src="./scripts.js"></script> -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-  <div>
+  <head>
+    <title>Aangifte erfbelasting</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="icon" href="./assets/favicon.ico"> -->
+    <!-- <script src="./scripts.js"></script> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
     <input type="checkbox" id="toggle-theme">
-    <label for="toggle-theme">Dark mode</label>
-  </div>
-  <section>
-    <h1>wassahpp</h1>
-    <form>
-      <img src="images/is-or-where.png" alt="Bit of code showcasing where you use :is() and/or :where()">
-      <fieldset>
-        <legend>input...([type="text"], [type="number"])</legend>
-        <label for="is"> Use :is()
-          <input type="radio" id="is" name="is-or-where">
+    <section>
+      <h1>wassahpp</h1>
+      <form>
+        <img src="images/is-or-where.png" alt="Bit of code showcasing where you use :is() and/or :where()">
+        <fieldset>
+          <legend>input...([type="text"], [type="number"])</legend>                        
+          <label for="is"> Use :is()
+            <input type="radio" id="is" name="is-or-where">
+          </label>
+          <label for="where"> Use :where()
+            <input type="radio" id="where" name="is-or-where">
+          </label>
+        </fieldset>
+        <label for="name"> Name
+            <input type="text" id="name">
         </label>
-        <label for="where"> Use :where()
-          <input type="radio" id="where" name="is-or-where">
+        <label for="age"> Age
+            <input type="number" id="age">
         </label>
-      </fieldset>
-      <label for="name"> Name
-        <input type="text" id="name">
-      </label>
-      <label for="age"> Age
-        <input type="number" id="age">
-      </label>
-      <label for="color"> Fav color
-        <input type="color" id="name">
-      </label>
-      <label for="animal"> Fav animal
-        <input type="text" id="animal" name="other-styling">
-      </label>
-    </form>
-  </section>
-  <section>
-    <div class="checks">
-      <label>
-        <input type="checkbox" class="for-1" required>
-        Heeft een hamster
-      </label>
-      <label>
-        <input type="checkbox" class="for-2" required>
-        Heeft een hond
-      </label>
-      <label>
-        <input type="checkbox" class="for-3" required>
-        Heeft een schildpad
-      </label>
-      <label>
-        <input type="checkbox" class="for-4" required>
-        Heeft een steen
-      </label>
-      <label>
-        <input type="checkbox" class="for-2" required>
-        Test 2
-      </label>
-      <label>
-        <input type="checkbox" class="for-3" required>
-        Test 3
-      </label>
-      <label>
-        <input type="checkbox" class="for-1" required>
-        Test 1
-      </label>
-      <label>
-        <input type="checkbox" class="for-4" required>
-        Test 4
-      </label>
-      <label>
-        <input type="checkbox" class="for-3" required>
-        Test 3
-      </label>
-      <label>
-        <input type="checkbox" class="for-1" required>
-        Test 1
-      </label>
-      <label>
-        <input type="checkbox" class="for-2" required>
-        Test 2
-      </label>
-      <label>
-        <input type="checkbox" class="for-4" required>
-        Test 4
-      </label>
-    </div>
+        <label for="color"> Fav color
+            <input type="color" id="name">
+        </label>
+        <label for="animal"> Fav animal
+            <input type="text" id="animal" name="other-styling">
+        </label>
+      </form>
+    </section>
+    <section>
+      <div class="checks">
+        <label>
+          <input type="checkbox" class="for-1" required>
+          Lives in Hoorn
+        </label>
+        <label>
+          <input type="checkbox" class="for-2" required>
+          :has a dog
+        </label>
+        <label>
+          <input type="checkbox" class="for-3" required>
+          :has a boat
+        </label>
+        <label>
+          <input type="checkbox" class="for-4" required>
+          :has a plant
+        </label>
+      </div>
+      <div class="checks">
+        <label>
+          <input type="checkbox" class="for-2" required>
+          Uses pixels
+        </label>
+        <label>
+          <input type="checkbox" class="for-3" required>
+          :has been to Malaysia
+        </label>
+        <label>
+          <input type="checkbox" class="for-1" required>
+          Is allergic to mosquitos
+        </label>
+        <label>
+          <input type="checkbox" class="for-4" required>
+          Is afraid of classes
+        </label>
+      </div>
+      <div class="checks">
+        <label>
+          <input type="checkbox" class="for-3" required>
+          Lives in Aalsmeer
+        </label>
+        <label>
+          <input type="checkbox" class="for-1" required>
+          Loves lasagna
+        </label>
+        <label>
+          <input type="checkbox" class="for-2" required>
+          Wears glasses
+        </label>
+        <label>
+          <input type="checkbox" class="for-4" required>
+          :has a stamp collection
+        </label>
+      </div>
+      <ul>
     <ul>
-        <li class="name-1">N</li>
-        <li class="name-2">T</li>
-        <li>-</li>
-        <li class="name-1">I</li>
-        <li class="name-2">H</li>
-        <li class="name-3">S</li>
-        <li class="name-1 name-3">E</li>
-        <li class="name-2">O</li>
-        <li>-</li>
-        <li class="name-1 name-3">N</li>
-        <li class="name-3">N</li>
-        <li>-</li>
-        <li class="name-1">K</li>
-        <li class="name-2">M</li>
-        <li class="name-4">L</li>
-        <li class="name-1">E</li>
-        <li class="name-4">I</li>
-        <li>-</li>
-        <li class="name-4">S</li>
-        <li>-</li>
-        <li class="name-2 name-3 name-4">A</li>
-        <li>-</li>
-        <li class="name-2">S</li>
-      </ul> -->
+      <li>N</li>
+      <li>T</li>
+      <li>-</li>
+      <li>I</li>
+      <li>H</li>
+      <li>S</li>
+      <li>E</li>
+      <li>O</li>
+      <li>-</li>
+      <li>N</li>
+      <li>N</li>
+      <li>-</li>
+      <li>K</li>
+      <li>M</li>
+      <li>L</li>
+      <li>E</li>
+      <li>I</li>
+      <li>-</li>
+      <li>S</li>
+      <li>-</li>
+      <li>A</li>
+      <li>-</li>
+      <li>S</li>
+    </ul>
+
+
+
+
 
 
 
