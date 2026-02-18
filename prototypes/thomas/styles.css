@@ -1,0 +1,23 @@
+body {
+  background-color: white;
+}
+
+body:not(:has(.for-1:invalid)) .name-1 {
+  color: red;
+}
+body:not(:has(.for-2:invalid)) .name-2 {
+  color: red;
+}
+
+body:not(:has(.for-3:invalid)) .name-3 {
+  color: red;
+}
+
+body:not(:has(.for-4:invalid)) .name-4 {
+  color: red;
+}
+
+.checks {
+  display: flex;
+  justify-content: space-around;
+}
