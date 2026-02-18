@@ -1,0 +1,53 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden; 
+}
+
+body:has(:target) section:not(:target) {
+    opacity: 0.4;
+    transition: opacity 1s; 
+}
+
+ul {
+    position: fixed;
+    list-style-type: none;
+    padding: 1em; 
+    display: flex; 
+    flex-direction: row; 
+    gap: 1em; 
+    margin: 0;
+    z-index: 5;
+}
+
+ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+section {
+    height: 100vh; 
+    width: 100vw; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+section {   
+    background-color: rgb(180, 180, 180)
+}
+
+section:nth-of-type(1):target {
+    background-color:coral; 
+}
+
+section:nth-of-type(2):target {
+    background-color: lightskyblue
+}
+
+section:nth-of-type(3):target {
+    background-color:slateblue;
+}
