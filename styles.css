@@ -2,13 +2,23 @@ body {
   background-color: white;
   font-family: 'Segoe UI', sans-serif;
   padding: 15px;
-  background-color: var(--color-bg);
+  background: var(--color-accent);
   color: var(--color-text);
+
+  height: 100%;
+  margin: 0;
 }
+
 
 body>section {
   margin-bottom: 25px;
+  min-height: 20vw;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-list);
 }
+
+
 
 body>div {
   position: fixed;
@@ -26,17 +36,24 @@ body>div {
   position: fixed;
 }
 
+
 @layer one {
   body {
-    --color-bg: white;
-    --color-text: black;
+    --color-text: #272727;
+    --color-bg: rgb(214,214,214);
+    --color-list: #ffffff;
+    --color-accent: fixed linear-gradient(hotpink 20%, skyblue 80%) center / 100vw 100vh;
   }
 
   body:has(#toggle-theme:checked) {
-    --color-bg: #202020;
-    --color-text: white;
+    --color-text: #e1e1e1;
+    --color-bg: #111;
+    --color-list: #222;
+    --color-accent: fixed linear-gradient(MediumVioletRed 20%, RoyalBlue 80%) center / 100vw 100vh;
   }
 }
+
+
 
 
 @layer two {
@@ -133,6 +150,8 @@ form img {
 ul {
   display: flex;
   transition: 1s;
+
+  font-weight: bold;
 }
 
 ul li {
