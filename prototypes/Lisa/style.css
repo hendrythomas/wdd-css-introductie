@@ -20,9 +20,14 @@ li:nth-last-child(10) ~ :has(~ :nth-last-child(2)):nth-child(odd){
   background-color:hotpink;
 }
 
-li:nth-child(3n +1) {
+li:nth-child(-3n +16) {
     background-color: aqua;
 }
 
+li:nth-child(5) ~ :has(~ :nth-child(8)), li:nth-child(9) ~ :has(~ :nth-child(12)), li:nth-child(21) {
+    background-color: green;
+}
 
-
+li:nth-child(-3n +8), li:nth-child(14), li:nth-child(21), li:not(:has(+li)) {
+    background-color: yellow;
+} 
