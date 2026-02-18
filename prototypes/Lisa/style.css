@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+
+    background-color: #d3cccc;
+    color: rgb(27, 27, 35);
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    margin: 0.5rem;
+}
+
+
+li:nth-last-child(10) ~ :has(~ :nth-last-child(2)):nth-child(odd){
+  background-color:hotpink;
+}
+
+li:nth-child(3n +1) {
+    background-color: aqua;
+}
+
+
+
