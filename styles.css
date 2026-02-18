@@ -32,7 +32,7 @@ body>section {
 
 @layer two {
   body:has(:target[id='anchor-1']) {
-    --color-bg: red;
+    --color-bg: rgb(12, 59, 8);
     --color-text: black;
   }
 
