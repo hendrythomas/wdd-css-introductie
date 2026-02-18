@@ -6,6 +6,10 @@ body {
   color: var(--color-text);
 }
 
+body > section {
+  margin-bottom: 25px;
+}
+
 
 /* Theme */
 
@@ -21,45 +25,63 @@ body:has(#toggle-theme:checked) {
   --color-bg: #202020;
   --color-text: white;
 }
-body:has(:target[id="anchor-1"]) {
+body:has(:target[id='anchor-1']) {
   --color-bg: red;
   --color-text: black;
 }
-body:has(:target[id="anchor-2"]) {
+body:has(:target[id='anchor-2']) {
   --color-bg: orange;
   --color-text: black;
 }
-body:has(:target[id="anchor-3"]) {
+body:has(:target[id='anchor-3']) {
   --color-bg: yellow;
   --color-text: black;
 }
-body:has(:target[id="anchor-4"]) {
+body:has(:target[id='anchor-4']) {
   --color-bg: green;
   --color-text: black;
 }
 
 
-/* Text input */
-
-body > section {
-  margin-bottom: 25px;
+/* //////// */
+/* MARK: :is() of :where()
+/* ///////// */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-input {
-  background-color: coral;
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  input{
+    background-color: coral;
+  }
 }
 
-/* input:is([type="text"], [type="number"]){
-  background-color: rgb(144, 209, 229);
-  border: solid 2px grey;
-} */
-
-input:where([type="text"], [type="number"]){
-  background-color: rgb(144, 209, 229);
+body:has(#is:checked) {
+  input:is([type='text'], [type='number']){
+    background-color: rgb(144, 209, 229);
+  }
 }
 
-[name="other-styling"]:focus {
-  background-color: yellow;
+body:has(#where:checked) {
+  input:where([type='text'], [type='number']){
+    background-color: rgb(144, 209, 229);
+  }
+}
+
+body:has(#is:checked),
+:root:has(#where:checked) {
+  [name='other-styling'] {
+      background-color: yellow;
+  }
+}
+
+form img {
+  max-width: 800px;
 }
 
 
