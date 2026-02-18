@@ -6,7 +6,7 @@ body {
   color: var(--color-text);
 }
 
-body > section {
+body>section {
   margin-bottom: 25px;
 }
 
@@ -22,6 +22,7 @@ body > section {
     --color-bg: white;
     --color-text: black;
   }
+
   body:has(#toggle-theme:checked) {
     --color-bg: #202020;
     --color-text: white;
@@ -34,14 +35,17 @@ body > section {
     --color-bg: red;
     --color-text: black;
   }
+
   body:has(:target[id='anchor-2']) {
     --color-bg: orange;
     --color-text: black;
   }
+
   body:has(:target[id='anchor-3']) {
     --color-bg: yellow;
     --color-text: black;
   }
+
   body:has(:target[id='anchor-4']) {
     --color-bg: green;
     --color-text: black;
@@ -63,19 +67,20 @@ label {
   display: flex;
   flex-direction: column;
   align-items: start;
-  input{
+
+  input {
     background-color: coral;
   }
 }
 
 :root:has(#is:checked) {
-  input:is([type='text'], [type='number']){
+  input:is([type='text'], [type='number']) {
     background-color: rgb(144, 209, 229);
   }
 }
 
 :root:has(#where:checked) {
-  input:where([type='text'], [type='number']){
+  input:where([type='text'], [type='number']) {
     background-color: rgb(144, 209, 229);
   }
 }
@@ -83,7 +88,7 @@ label {
 :root:has(#is:checked),
 :root:has(#where:checked) {
   [name='other-styling'] {
-      background-color: yellow;
+    background-color: yellow;
   }
 }
 
@@ -94,10 +99,15 @@ form img {
 
 /* Checkboxes */
 
-body:not(:has(.for-1:invalid)) .name-1,
-body:not(:has(.for-2:invalid)) .name-2,
-body:not(:has(.for-3:invalid)) .name-3,
-body:not(:has(.for-4:invalid)) .name-4 {
+body:not(:has(.for-1:invalid)) li:nth-child(-3n +16),
+body:not(:has(.for-2:invalid)) li:nth-child(-3n +8),
+li:nth-child(14),
+li:nth-child(21),
+li:not(:has(+li)),
+body:not(:has(.for-3:invalid)) li:nth-child(5)~ :has(~ :nth-child(8)),
+li:nth-child(9)~ :has(~ :nth-child(12)),
+li:nth-child(21),
+body:not(:has(.for-4:invalid)) li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
   color: red;
   cursor: pointer;
 }
@@ -116,6 +126,7 @@ body:not(:has(.for-4:invalid)) .name-4 {
 
 ul {
   display: flex;
+  transition: 1s;
 }
 
 ul li {
@@ -124,23 +135,23 @@ ul li {
 }
 
 
-li:nth-last-child(10) ~ :has(~ :nth-last-child(2)):nth-child(odd){
-background-color:hotpink;
+/* li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
+  font-size: 2rem;
 }
 
 li:nth-child(-3n +16) {
   background-color: aqua;
 }
 
-li:nth-child(5) ~ :has(~ :nth-child(8)), li:nth-child(9) ~ :has(~ :nth-child(12)), li:nth-child(21) {
+li:nth-child(5)~ :has(~ :nth-child(8)),
+li:nth-child(9)~ :has(~ :nth-child(12)),
+li:nth-child(21) {
   background-color: green;
 }
 
-li:nth-child(-3n +8), li:nth-child(14), li:nth-child(21), li:not(:has(+li)) {
+li:nth-child(-3n +8),
+li:nth-child(14),
+li:nth-child(21),
+li:not(:has(+li)) {
   background-color: yellow;
-} 
-
-
-a {
-  all: unset;
-}
+} */
