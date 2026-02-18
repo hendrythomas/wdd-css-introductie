@@ -5,14 +5,25 @@ body {
 }
 
 
+/* Theme */
+
+#toggle-theme {
+  position: fixed;
+}
+
+body:has(#toggle-theme:checked) {
+  background-color: red;
+}
+
+
 /* Text input */
 
 body > section {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 input {
-    background-color: coral;
+  background-color: coral;
 }
 
 /* input:is([type="text"], [type="number"]){
