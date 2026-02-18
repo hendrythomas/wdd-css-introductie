@@ -10,6 +10,15 @@ body>section {
   margin-bottom: 25px;
 }
 
+body>div {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  display: flex;
+}
+
+
+
 
 /* Theme */
 
@@ -99,6 +108,19 @@ form img {
 .checks {
   display: flex;
   justify-content: space-around;
+
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.checks label {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 1em;
+  background-color: rgb(223, 223, 223);
+  border-radius: 8px;
+  padding: 0.5em;
 }
 
 :target {
