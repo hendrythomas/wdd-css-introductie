@@ -2,6 +2,8 @@ body {
   background-color: white;
   font-family: 'Segoe UI', sans-serif;
   padding: 15px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 
@@ -11,8 +13,13 @@ body {
   position: fixed;
 }
 
+body {
+  --color-bg: white;
+  --color-text: black;
+}
 body:has(#toggle-theme:checked) {
-  background-color: red;
+  --color-bg: red;
+  --color-text: cyan;
 }
 
 
