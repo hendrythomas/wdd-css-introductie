@@ -1,0 +1,19 @@
+/* //////// */
+/* MARK: :is() of :where()
+/* ///////// */
+input{
+    background-color: coral;
+}
+
+/* input:is([type="text"], [type="number"]){
+  background-color: rgb(144, 209, 229);
+  border: solid 2px grey;
+} */
+
+input:where([type="text"], [type="number"]){
+  background-color: rgb(144, 209, 229);
+}
+
+[name="other-styling"]:focus {
+  background-color: yellow;
+}
