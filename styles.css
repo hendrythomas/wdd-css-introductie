@@ -17,30 +17,37 @@ body > section {
   position: fixed;
 }
 
-body {
-  --color-bg: white;
-  --color-text: black;
+@layer one {
+  body {
+    --color-bg: white;
+    --color-text: black;
+  }
+  body:has(#toggle-theme:checked) {
+    --color-bg: #202020;
+    --color-text: white;
+  }
 }
-body:has(#toggle-theme:checked) {
-  --color-bg: #202020;
-  --color-text: white;
+
+
+@layer two {
+  body:has(:target[id='anchor-1']) {
+    --color-bg: red;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-2']) {
+    --color-bg: orange;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-3']) {
+    --color-bg: yellow;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-4']) {
+    --color-bg: green;
+    --color-text: black;
+  }
 }
-body:has(:target[id='anchor-1']) {
-  --color-bg: red;
-  --color-text: black;
-}
-body:has(:target[id='anchor-2']) {
-  --color-bg: orange;
-  --color-text: black;
-}
-body:has(:target[id='anchor-3']) {
-  --color-bg: yellow;
-  --color-text: black;
-}
-body:has(:target[id='anchor-4']) {
-  --color-bg: green;
-  --color-text: black;
-}
+
 
 
 /* //////// */
