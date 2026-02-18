@@ -1,19 +1,37 @@
 /* //////// */
 /* MARK: :is() of :where()
 /* ///////// */
-input{
-    background-color: coral;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
-/* input:is([type="text"], [type="number"]){
-  background-color: rgb(144, 209, 229);
-  border: solid 2px grey;
-} */
-
-input:where([type="text"], [type="number"]){
-  background-color: rgb(144, 209, 229);
+label{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    input{
+        background-color: coral;
+    }
 }
 
-[name="other-styling"]:focus {
-  background-color: yellow;
+
+:root:has(#is:checked){
+    input:is([type="text"], [type="number"]){
+        background-color: rgb(144, 209, 229);
+    }
+}
+
+:root:has(#where:checked){
+    input:where([type="text"], [type="number"]){
+        background-color: rgb(144, 209, 229);
+    }
+}
+
+:root:has(#is:checked),
+:root:has(#where:checked) {
+    [name="other-styling"] {
+        background-color: yellow;
+    }
 }
