@@ -1,0 +1,44 @@
+body {
+  background-color: white;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 15px;
+}
+
+
+/* Text input */
+
+body > section {
+    margin-bottom: 25px;
+}
+
+input {
+    background-color: coral;
+}
+
+/* input:is([type="text"], [type="number"]){
+  background-color: rgb(144, 209, 229);
+  border: solid 2px grey;
+} */
+
+input:where([type="text"], [type="number"]){
+  background-color: rgb(144, 209, 229);
+}
+
+[name="other-styling"]:focus {
+  background-color: yellow;
+}
+
+
+/* Checkboxes */
+
+body:not(:has(.for-1:invalid)) .name-1,
+body:not(:has(.for-2:invalid)) .name-2,
+body:not(:has(.for-3:invalid)) .name-3,
+body:not(:has(.for-4:invalid)) .name-4 {
+  color: red;
+}
+
+.checks {
+  display: flex;
+  justify-content: space-around;
+}
