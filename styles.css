@@ -18,8 +18,24 @@ body {
   --color-text: black;
 }
 body:has(#toggle-theme:checked) {
+  --color-bg: #202020;
+  --color-text: white;
+}
+body:has(:target[id="anchor-1"]) {
   --color-bg: red;
-  --color-text: cyan;
+  --color-text: black;
+}
+body:has(:target[id="anchor-2"]) {
+  --color-bg: orange;
+  --color-text: black;
+}
+body:has(:target[id="anchor-3"]) {
+  --color-bg: yellow;
+  --color-text: black;
+}
+body:has(:target[id="anchor-4"]) {
+  --color-bg: green;
+  --color-text: black;
 }
 
 
@@ -54,9 +70,19 @@ body:not(:has(.for-2:invalid)) .name-2,
 body:not(:has(.for-3:invalid)) .name-3,
 body:not(:has(.for-4:invalid)) .name-4 {
   color: red;
+  cursor: pointer;
 }
 
 .checks {
   display: flex;
   justify-content: space-around;
+}
+
+:target {
+  color: white;
+}
+
+
+a {
+  all: unset;
 }
