@@ -61,19 +61,19 @@ label {
   }
 }
 
-body:has(#is:checked) {
+:root:has(#is:checked) {
   input:is([type='text'], [type='number']){
     background-color: rgb(144, 209, 229);
   }
 }
 
-body:has(#where:checked) {
+:root:has(#where:checked) {
   input:where([type='text'], [type='number']){
     background-color: rgb(144, 209, 229);
   }
 }
 
-body:has(#is:checked),
+:root:has(#is:checked),
 :root:has(#where:checked) {
   [name='other-styling'] {
       background-color: yellow;
