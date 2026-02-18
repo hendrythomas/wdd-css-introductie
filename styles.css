@@ -1,0 +1,117 @@
+body {
+  background-color: white;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 15px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body > section {
+  margin-bottom: 25px;
+}
+
+
+/* Theme */
+
+#toggle-theme {
+  position: fixed;
+}
+
+@layer one {
+  body {
+    --color-bg: white;
+    --color-text: black;
+  }
+  body:has(#toggle-theme:checked) {
+    --color-bg: #202020;
+    --color-text: white;
+  }
+}
+
+
+@layer two {
+  body:has(:target[id='anchor-1']) {
+    --color-bg: red;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-2']) {
+    --color-bg: orange;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-3']) {
+    --color-bg: yellow;
+    --color-text: black;
+  }
+  body:has(:target[id='anchor-4']) {
+    --color-bg: green;
+    --color-text: black;
+  }
+}
+
+
+
+/* //////// */
+/* MARK: :is() of :where()
+/* ///////// */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  input{
+    background-color: coral;
+  }
+}
+
+:root:has(#is:checked) {
+  input:is([type='text'], [type='number']){
+    background-color: rgb(144, 209, 229);
+  }
+}
+
+:root:has(#where:checked) {
+  input:where([type='text'], [type='number']){
+    background-color: rgb(144, 209, 229);
+  }
+}
+
+:root:has(#is:checked),
+:root:has(#where:checked) {
+  [name='other-styling'] {
+      background-color: yellow;
+  }
+}
+
+form img {
+  max-width: 800px;
+}
+
+
+/* Checkboxes */
+
+body:not(:has(.for-1:invalid)) .name-1,
+body:not(:has(.for-2:invalid)) .name-2,
+body:not(:has(.for-3:invalid)) .name-3,
+body:not(:has(.for-4:invalid)) .name-4 {
+  color: red;
+  cursor: pointer;
+}
+
+.checks {
+  display: flex;
+  justify-content: space-around;
+}
+
+:target {
+  color: white;
+}
+
+
+a {
+  all: unset;
+}
