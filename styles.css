@@ -174,8 +174,8 @@ body:not(:has(.for-2:invalid)) li:not(:has(+li)) {
 }
 
 body:not(:has(.for-3:invalid)) li:nth-child(5)~ :has(~ :nth-child(8)),
-body:not(:has(.for-2:invalid)) li:nth-child(9)~ :has(~ :nth-child(12)),
-body:not(:has(.for-2:invalid)) li:nth-child(21) {
+body:not(:has(.for-3:invalid)) li:nth-child(9)~ :has(~ :nth-child(12)),
+body:not(:has(.for-3:invalid)) li:nth-child(21) {
   transition: 1s;
   transform: scale(2);
   color: red;
