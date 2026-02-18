@@ -15,3 +15,7 @@ Notes:
 *  `:is`:  specificity of highest selector
 *  `:has` does not change specificity
 *  
+
+Ideeën ideeëen ideëeen:
+
+*  checkboxes
