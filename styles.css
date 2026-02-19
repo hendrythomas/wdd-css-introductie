@@ -1,3 +1,7 @@
+/* //////// */
+/* MARK: Standard styling
+/* ///////// */
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,32 +17,70 @@ body {
   margin: 0;
 }
 
-
-body>section {
+body > section {
   margin-bottom: 25px;
-  min-height: 20vw;
+  min-height: 10vw;
   padding: 2rem 1rem;
   border-radius: 1rem;
   background-color: var(--color-list);
 }
 
-
-
-body>div {
+body > div {
   position: fixed;
   right: 1em;
   top: 1em;
   display: flex;
 }
 
+#darkMode {
+  font-size: 2rem;
+}
 
 
+/* Checkboxes  */
 
-/* Theme */
+.checks {
+  display: grid;
+  grid-auto-flow: column;
+}
 
-/* #toggle-theme {
-  position: fixed;
-} */
+.checks label {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row-reverse;
+
+  background-color: var(--color-list);
+  border-radius: 8px;
+  padding: 0.5em;
+  margin: 0.5rem;
+}
+
+:target {
+  color: white;
+}
+
+
+/* Names */
+
+#letterString ul {
+  display: flex;
+  transition: 1s;
+
+  font-weight: bold;
+  justify-content: center;
+}
+
+ul li {
+  transition: 1s;
+  list-style: none;
+  margin: 0.5rem;
+}
+
+
+/* //////// */
+/* MARK: Theme
+/* ///////// */
 
 #darkMode {
   display: flex;
@@ -61,25 +103,6 @@ body:has(#toggle-theme:checked) {
   --color-bg: #111;
   --color-list: #2222227b;
   --color-accent: fixed linear-gradient(MediumVioletRed 20%, RoyalBlue 80%) center / 100vw 100vh;
-}
-
-:root:has(#is:checked) {
-  input:is([type='text'], [type='number']) {
-    background-color: rgb(144, 209, 229);
-  }
-}
-
-:root:has(#where:checked) {
-  input:where([type='text'], [type='number']) {
-    background-color: rgb(144, 209, 229);
-  }
-}
-
-:root:has(#is:checked),
-:root:has(#where:checked) {
-  [name='other-styling'] {
-    background-color: yellow;
-  }
 }
 
 /* Checkboxes */
@@ -138,9 +161,11 @@ body:not(:has(.for-4:invalid)) li:nth-last-child(10)~ :has(~ :nth-last-child(2))
   cursor: pointer;
 }
 
+
 /* //////// */
 /* MARK: :is() of :where()
 /* ///////// */
+
 form {
   display: flex;
   flex-direction: column;
@@ -157,76 +182,34 @@ label {
   }
 }
 
+:root:has(#is:checked) {
+  input:is([type='text'], [type='number']) {
+    background-color: rgb(144, 209, 229);
+  }
+}
+
+:root:has(#where:checked) {
+  input:where([type='text'], [type='number']) {
+    background-color: rgb(144, 209, 229);
+  }
+}
+
+:root:has(#is:checked),
+:root:has(#where:checked) {
+  [name='other-styling'] {
+    background-color: yellow;
+  }
+}
+
 form img {
   max-width: 800px;
 }
 
-/* checkboxes  */
 
-.checks {
-  display: grid;
-  grid-auto-flow: column;
+/* //////// */
+/* MARK: Anchor link
+/* ///////// */
 
-}
-
-.checks label {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row-reverse;
-
-  background-color: var(--color-list);
-  border-radius: 8px;
-  padding: 0.5em;
-  margin: 0.5rem;
-}
-
-:target {
-  color: white;
-}
-
-/* "gestolen code" */
-
-input[type="checkbox"] {
-
-  &:checked+label:after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 9px;
-    background: white;
-    width: 2px;
-    height: 2px;
-    box-shadow:
-      2px 0 0 white,
-      4px 0 0 white,
-      4px -2px 0 white,
-      4px -4px 0 white,
-      4px -6px 0 white,
-      4px -8px 0 white;
-    transform: rotate(45deg);
-  }
-}
-
-
-
-/* Names */
-
-#letterString ul {
-  display: flex;
-  transition: 1s;
-
-  font-weight: bold;
-  justify-content: center;
-}
-
-ul li {
-  transition: 1s;
-  list-style: none;
-  margin: 0.5rem;
-}
-
-/* anchor link */ 
 .anchorlink p {
   font-size: 1.5em;
 }
