@@ -6,32 +6,67 @@ body {
   background-color: white;
   font-family: 'Segoe UI', sans-serif;
   padding: 15px;
-  background-color: var(--color-bg);
+  background: var(--color-accent);
   color: var(--color-text);
+
+  height: 100%;
+  margin: 0;
 }
+
 
 body>section {
   margin-bottom: 25px;
+  min-height: 20vw;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-list);
 }
+
+
+
+body>div {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  display: flex;
+}
+
+
 
 
 /* Theme */
 
-#toggle-theme {
+/* #toggle-theme {
   position: fixed;
+} */
+
+#darkMode {
+  display: flex;
+  justify-content: center;
 }
+
 
 @layer one {
   body {
-    --color-bg: white;
-    --color-text: black;
+    --color-text: #272727;
+    --color-lowlight: #e5e5e5;
+    --color-highlight: #200e4e;
+    --color-bg: rgb(214, 214, 214);
+    --color-list: #ffffffa8;
+    --color-accent: fixed linear-gradient(hotpink 20%, skyblue 80%) center / 100vw 100vh;
   }
 
   body:has(#toggle-theme:checked) {
-    --color-bg: #202020;
-    --color-text: white;
+    --color-text: #e1e1e1;
+    --color-lowlight: #3d3d3d;
+    --color-highlight: #b096f4;
+    --color-bg: #111;
+    --color-list: #2222227b;
+    --color-accent: fixed linear-gradient(MediumVioletRed 20%, RoyalBlue 80%) center / 100vw 100vh;
   }
 }
+
+
 
 
 @layer two {
@@ -100,43 +135,101 @@ form img {
   max-width: 800px;
 }
 
+/* checkboxes  */
+
 .checks {
+  display: grid;
+  grid-auto-flow: column;
+
+}
+
+.checks label {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row-reverse;
+
+  background-color: var(--color-list);
+  border-radius: 8px;
+  padding: 0.5em;
+  margin: 0.5rem;
 }
 
 :target {
   color: white;
 }
 
+/* "gestolen code" */
+
+input[type="checkbox"] {
+
+  &:checked+label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+
 
 /* Names */
 
-ul {
+#letterString ul {
   display: flex;
   transition: 1s;
+
+  font-weight: bold;
+  justify-content: center;
 }
 
 ul li {
+  transition: 1s;
   list-style: none;
   margin: 0.5rem;
 }
 
 /* Checkboxes */
 
+body:not(:has(.for-1:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+}
+
 body:not(:has(.for-1:invalid)) li:nth-child(-3n +16) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
+
+/* body:not(:has(.for-4:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
 
 body:not(:has(.for-4:invalid)) li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
+
+/* body:not(:has(.for-2:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
 
 body:not(:has(.for-2:invalid)) li:nth-child(-3n +8),
 body:not(:has(.for-2:invalid)) li:nth-child(14),
@@ -144,39 +237,23 @@ body:not(:has(.for-2:invalid)) li:nth-child(21),
 body:not(:has(.for-2:invalid)) li:not(:has(+li)) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
+
+/* body:not(:has(.for-3:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
 
 body:not(:has(.for-3:invalid)) li:nth-child(5)~ :has(~ :nth-child(8)),
 body:not(:has(.for-3:invalid)) li:nth-child(9)~ :has(~ :nth-child(12)),
 body:not(:has(.for-3:invalid)) li:nth-child(21) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
-
-/* li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
-  font-size: 2rem;
-}
-
-li:nth-child(-3n +16) {
-  background-color: aqua;
-}
-
-li:nth-child(5)~ :has(~ :nth-child(8)),
-li:nth-child(9)~ :has(~ :nth-child(12)),
-li:nth-child(21) {
-  background-color: green;
-}
-
-li:nth-child(-3n +8),
-li:nth-child(14),
-li:nth-child(21),
-li:not(:has(+li)) {
-  background-color: yellow;
-} */
 
 /* Anchor links */ 
 #anchor:has(:target) section:not(:target) {
