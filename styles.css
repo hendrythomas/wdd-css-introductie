@@ -255,48 +255,12 @@ body:not(:has(.for-3:invalid)) li:nth-child(21) {
   cursor: pointer;
 }
 
-/* Anchor links */ 
-#anchor:has(:target) section:not(:target) {
-    opacity: 0.4;
-    transition: opacity 1s; 
+/* anchor link */ 
+.anchorlink p {
+  font-size: 1.5em;
 }
 
-#anchor ul {
-    position: sticky;
-    list-style-type: none;
-    padding: 1em; 
-    display: flex; 
-    flex-direction: row; 
-    gap: 1em; 
-    margin: 0;
-    z-index: 5;
-}
-
-#anchor ul a {
-    text-decoration: none;
-    color: #000;
-}
-
-#anchor section {
-    height: 100vh; 
-    width: 100vw; 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
-
-#anchor section {   
-    background-color: rgb(180, 180, 180)
-}
-
-#anchor section:nth-of-type(1):target {
-    background-color:coral; 
-}
-
-#anchor section:nth-of-type(2):target {
-    background-color: lightskyblue
-}
-
-#anchor section:nth-of-type(3):target {
-    background-color:slateblue;
+span:target {
+  background-color: var(--color-highlight);
+  color: var(--color-lowlight); 
 }
