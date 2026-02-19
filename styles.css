@@ -40,13 +40,15 @@ body>div {
 @layer one {
   body {
     --color-text: #272727;
-    --color-bg: rgb(214,214,214);
+    --color-highlight: #200e4e;
+    --color-bg: rgb(214, 214, 214);
     --color-list: #ffffff;
     --color-accent: fixed linear-gradient(hotpink 20%, skyblue 80%) center / 100vw 100vh;
   }
 
   body:has(#toggle-theme:checked) {
     --color-text: #e1e1e1;
+    --color-highlight: #b096f4;
     --color-bg: #111;
     --color-list: #222;
     --color-accent: fixed linear-gradient(MediumVioletRed 20%, RoyalBlue 80%) center / 100vw 100vh;
@@ -122,36 +124,64 @@ form img {
   max-width: 800px;
 }
 
-.checks {
-  display: flex;
-  justify-content: space-around;
+/* checkboxes  */
 
-  gap: 1em;
-  flex-wrap: wrap;
+.checks {
+  display: grid;
+  grid-auto-flow: column;
+
 }
 
 .checks label {
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-direction: row-reverse;
-  gap: 1em;
+
   background-color: rgb(223, 223, 223);
   border-radius: 8px;
   padding: 0.5em;
+  margin: 0.5rem;
 }
 
 :target {
   color: white;
 }
 
+/* "gestolen code" */
+
+input[type="checkbox"] {
+
+  // Checkmark. Could be replaced with an image
+  &:checked+label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+
 
 /* Names */
 
-ul {
+#letterString ul {
   display: flex;
   transition: 1s;
 
   font-weight: bold;
+  justify-content: center;
 }
 
 ul li {
@@ -164,14 +194,14 @@ ul li {
 body:not(:has(.for-1:invalid)) li:nth-child(-3n +16) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
 
 body:not(:has(.for-4:invalid)) li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
 
@@ -181,7 +211,7 @@ body:not(:has(.for-2:invalid)) li:nth-child(21),
 body:not(:has(.for-2:invalid)) li:not(:has(+li)) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
 
@@ -190,7 +220,7 @@ body:not(:has(.for-3:invalid)) li:nth-child(9)~ :has(~ :nth-child(12)),
 body:not(:has(.for-3:invalid)) li:nth-child(21) {
   transition: 1s;
   transform: scale(3);
-  color: red;
+  color: var(--color-highlight);
   cursor: pointer;
 }
 
