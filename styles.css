@@ -32,25 +32,32 @@ body>div {
 
 /* Theme */
 
-#toggle-theme {
+/* #toggle-theme {
   position: fixed;
+} */
+
+#darkMode {
+  display: flex;
+  justify-content: center;
 }
 
 
 @layer one {
   body {
     --color-text: #272727;
+    --color-lowlight: #e5e5e5;
     --color-highlight: #200e4e;
     --color-bg: rgb(214, 214, 214);
-    --color-list: #ffffff;
+    --color-list: #ffffffa8;
     --color-accent: fixed linear-gradient(hotpink 20%, skyblue 80%) center / 100vw 100vh;
   }
 
   body:has(#toggle-theme:checked) {
     --color-text: #e1e1e1;
+    --color-lowlight: #3d3d3d;
     --color-highlight: #b096f4;
     --color-bg: #111;
-    --color-list: #222;
+    --color-list: #2222227b;
     --color-accent: fixed linear-gradient(MediumVioletRed 20%, RoyalBlue 80%) center / 100vw 100vh;
   }
 }
@@ -138,7 +145,7 @@ form img {
   align-content: center;
   flex-direction: row-reverse;
 
-  background-color: rgb(223, 223, 223);
+  background-color: var(--color-list);
   border-radius: 8px;
   padding: 0.5em;
   margin: 0.5rem;
@@ -152,7 +159,6 @@ form img {
 
 input[type="checkbox"] {
 
-  // Checkmark. Could be replaced with an image
   &:checked+label:after {
     content: '';
     position: absolute;
@@ -185,11 +191,17 @@ input[type="checkbox"] {
 }
 
 ul li {
+  transition: 1s;
   list-style: none;
   margin: 0.5rem;
 }
 
 /* Checkboxes */
+
+body:not(:has(.for-1:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+}
 
 body:not(:has(.for-1:invalid)) li:nth-child(-3n +16) {
   transition: 1s;
@@ -198,12 +210,22 @@ body:not(:has(.for-1:invalid)) li:nth-child(-3n +16) {
   cursor: pointer;
 }
 
+/* body:not(:has(.for-4:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
+
 body:not(:has(.for-4:invalid)) li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
   transition: 1s;
   transform: scale(3);
   color: var(--color-highlight);
   cursor: pointer;
 }
+
+/* body:not(:has(.for-2:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
 
 body:not(:has(.for-2:invalid)) li:nth-child(-3n +8),
 body:not(:has(.for-2:invalid)) li:nth-child(14),
@@ -215,6 +237,11 @@ body:not(:has(.for-2:invalid)) li:not(:has(+li)) {
   cursor: pointer;
 }
 
+/* body:not(:has(.for-3:invalid)) li {
+  color: var(--color-lowlight);
+  margin: 0.3rem;
+} */
+
 body:not(:has(.for-3:invalid)) li:nth-child(5)~ :has(~ :nth-child(8)),
 body:not(:has(.for-3:invalid)) li:nth-child(9)~ :has(~ :nth-child(12)),
 body:not(:has(.for-3:invalid)) li:nth-child(21) {
@@ -223,24 +250,3 @@ body:not(:has(.for-3:invalid)) li:nth-child(21) {
   color: var(--color-highlight);
   cursor: pointer;
 }
-
-/* li:nth-last-child(10)~ :has(~ :nth-last-child(2)):nth-child(odd) {
-  font-size: 2rem;
-}
-
-li:nth-child(-3n +16) {
-  background-color: aqua;
-}
-
-li:nth-child(5)~ :has(~ :nth-child(8)),
-li:nth-child(9)~ :has(~ :nth-child(12)),
-li:nth-child(21) {
-  background-color: green;
-}
-
-li:nth-child(-3n +8),
-li:nth-child(14),
-li:nth-child(21),
-li:not(:has(+li)) {
-  background-color: yellow;
-} */
